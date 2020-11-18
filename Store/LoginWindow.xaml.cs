@@ -28,7 +28,7 @@ namespace Store
             State.User = API.GetCustomerByName(NameField.Text.Trim());
             if (State.User != null)
             {
-                if (State.User.Password == PasswordField.Text)
+                if (State.User.Password == PasswordField.Password)
                 {
                     var next_window = new MainWindow();
                     next_window.Show();
@@ -36,7 +36,7 @@ namespace Store
                 }
                 else
                 {
-                    PasswordField.Text = "...";
+                    PasswordField.Password = "...";
                     MessageBox.Show("Wrong Password Try again.", "Wrong password", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
@@ -52,6 +52,16 @@ namespace Store
             var next_window = new CreateAccountWindow();
             next_window.Show();
             this.Close();
+        }
+
+        private void UsernameTextBoxClick(object sender, MouseButtonEventArgs e)
+        {
+            NameField.Clear();
+        }
+
+        private void PasswordTextBoxClick(object sender, MouseButtonEventArgs e)
+        {
+            PasswordField.Clear();
         }
     }
 }
