@@ -30,6 +30,17 @@ namespace Store
         {
             using (var ctx = new Context())
             {
+                State.User = API.GetCustomerByName(Name.Text);
+                if (State.User != null)
+                {
+                    MessageBox.Show("Username already taken.", "Account creation Failed!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Name.Text = "...";
+                    Password.Text = "...";
+                    Email.Text = "...";
+                    Age.Text = "...";
+                }
+                else
+                {
                 ctx.Customers.Add(new Customer { Name = Name.Text, Password = Password.Text, Email = Email.Text, Age = Convert.ToInt32(Age.Text) });
                 ctx.SaveChanges();
 
@@ -37,6 +48,7 @@ namespace Store
                 var next_window = new LoginWindow();
                 next_window.Show();
                 this.Close();
+                }
             }
         }
     }
