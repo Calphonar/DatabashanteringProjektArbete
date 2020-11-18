@@ -28,13 +28,22 @@ namespace Store
             State.User = API.GetCustomerByName(NameField.Text.Trim());
             if (State.User != null)
             {
-                var next_window = new MainWindow();
-                next_window.Show();
-                this.Close();
+                if (State.User.Password == PasswordField.Text)
+                {
+                    var next_window = new MainWindow();
+                    next_window.Show();
+                    this.Close();
+                }
+                else
+                {
+                    PasswordField.Text = "...";
+                    MessageBox.Show("Wrong Password Try again.", "Wrong password", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
             else
             {
                 NameField.Text = "...";
+                MessageBox.Show("Wrong Username Try again.", "Wrong username", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
