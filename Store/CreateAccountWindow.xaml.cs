@@ -30,25 +30,35 @@ namespace Store
         {
             using (var ctx = new Context())
             {
-                State.User = API.GetCustomerByName(Name.Text);
-                if (State.User != null)
+                try
                 {
-                    MessageBox.Show("Username already taken.", "Account creation Failed!", MessageBoxButton.OK, MessageBoxImage.Information);
-                    Name.Text = "...";
-                    Password.Text = "...";
-                    Email.Text = "...";
-                    Age.Text = "...";
-                }
-                else
-                {
-                ctx.Customers.Add(new Customer { Name = Name.Text, Password = Password.Text, Email = Email.Text, Age = Convert.ToInt32(Age.Text) });
-                ctx.SaveChanges();
+                    State.User = API.GetCustomerByName(Name.Text);
+                    if (State.User != null)
+                    {
+                         MessageBox.Show("Username already taken.", "Account creation Failed!", MessageBoxButton.OK, MessageBoxImage.Information);
+                         Name.Text = "...";
+                         Password.Text = "...";
+                         Email.Text = "...";
+                         Age.Text = "...";
+                    }
+                    else
+                    {
+                        ctx.Customers.Add(new Customer { Name = Name.Text, Password = Password.Text, Email = Email.Text, Age = Convert.ToInt32(Age.Text) });
+                        ctx.SaveChanges();
 
-                MessageBox.Show("Account successful creation.", "Account creation Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
-                var next_window = new LoginWindow();
-                next_window.Show();
-                this.Close();
+                         MessageBox.Show("Account successful creation.", "Account creation Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
+                         var next_window = new LoginWindow();
+                         next_window.Show();
+                         this.Close();
+                    }
                 }
+                catch (System.FormatException)
+                {
+                    Age.Text = "...";
+                    Age.Background = Brushes.Red;
+                    MessageBox.Show("Not correct input");
+                }
+
             }
         }
     }
