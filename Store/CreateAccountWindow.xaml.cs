@@ -61,5 +61,23 @@ namespace Store
 
             }
         }
+        
+        // Makes the three dots in the boxes disappear
+        private void AgeTextBoxClick(object sender, MouseButtonEventArgs e)
+        {
+            Age.Clear();
+        }
+        private void NameTextBoxClick(object sender, MouseButtonEventArgs e)
+        {
+            Name.Clear();
+        }
+        private void PasswordTextBoxClick(object sender, MouseButtonEventArgs e)
+        {
+            Password.Clear();
+        }
+        private void EmailTextBoxClick(object sender, MouseButtonEventArgs e)
+        {
+            Email.Clear();
+        }
     }
 }
