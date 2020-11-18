@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DatabaseConnection;
 
 namespace Store
 {
@@ -20,6 +21,13 @@ namespace Store
         public CreateAccountWindow()
         {
             InitializeComponent();
+        }
+
+        private void CreateNewAccountClick(object sender, RoutedEventArgs e)
+        {
+            var next_window = new LoginWindow();
+            next_window.Show();
+            this.Close();
         }
     }
 }
