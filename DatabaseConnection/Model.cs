@@ -15,6 +15,9 @@ namespace DatabaseConnection
         public int Id { get; set; }
         public string Title { get; set; }
         public string ImageURL { get; set; }
+        public string Genre { get; set; }
+        public int Year { get; set; }
+        public bool ChildSafe { get; set; }
         public virtual List<Rental> Sales { get; set; }
     }
     public class Rental
