@@ -110,22 +110,20 @@ namespace Store
 
         private void SortByRatingClick(object sender, RoutedEventArgs e)
         {
-            var SortByRatingButton = new Button() { };                         //  FÖRSÖKER FIXA KNAPPEN NÄR MAN KLICKAT PÅ SORT BY RATING, INTE FUNGERANDE I NULÄGET
+            MovieGrid.Children.Clear();
+
+            InitializeComponent();
+            var SortByRatingButton = new Button() { }; // Skapar ny "sort by rating" knapp eftersom den andra togs bort i moviegrid.children.clear();
             SortByRatingButton.Content = "Sort By Rating";
             SortByRatingButton.Click += SortByRatingClick;
             SortByRatingButton.HorizontalAlignment = HorizontalAlignment.Left;
             SortByRatingButton.Height = 30;
-            SortByRatingButton.Margin = new Thickness(50,-35,0,0);
+            SortByRatingButton.Margin = new Thickness(50, -35, 0, 0);
             SortByRatingButton.VerticalAlignment = VerticalAlignment.Top;
             SortByRatingButton.Width = 94;
             Grid.SetColumnSpan(SortByRatingButton, 2);
             Grid.SetColumn(SortByRatingButton, 3);
-
-
-            MovieGrid.Children.Clear();
-
-            InitializeComponent();
-
+            MovieGrid.Children.Add(SortByRatingButton);
 
             State.Movies = API.GetMovieSliceByRating(0, 30); ;
             for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
