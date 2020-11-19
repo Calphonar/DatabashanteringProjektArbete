@@ -42,7 +42,7 @@ namespace Store
                             text.VerticalAlignment = VerticalAlignment.Top; // vart texten ska ligga vertikalt
                             text.FontSize = 16;
                             text.FontWeight = FontWeights.UltraBold;
-                            text.FontFamily = new FontFamily("Comic Sans MS");
+                            text.FontFamily = new FontFamily("Sans-Serif");
                             text.Foreground = Brushes.White;
 
                             var image = new Image() { };
@@ -54,12 +54,22 @@ namespace Store
                             image.Height = 120;
                             image.Margin = new Thickness(4, 4, 4, 4);
 
+                            var rating = new Label() { };
+                            rating.Content = movie.Rating + "/10 ★";
+                            rating.HorizontalAlignment = HorizontalAlignment.Center;
+                            rating.VerticalAlignment = VerticalAlignment.Bottom;
+                            rating.Foreground = Brushes.White;
+
+
                             MovieGrid.Children.Add(text); // säger till att texten ska tillhöra den gridden
                             Grid.SetRow(text, y); // vilken grid i y
                             Grid.SetColumn(text, x); // vilken grid i x
                             MovieGrid.Children.Add(image);
                             Grid.SetRow(image, y);
                             Grid.SetColumn(image, x);
+                            MovieGrid.Children.Add(rating);
+                            Grid.SetRow(rating, y);
+                            Grid.SetColumn(rating, x);
                         }
                         catch (Exception e) when 
                             (e is ArgumentNullException || 
