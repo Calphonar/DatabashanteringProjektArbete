@@ -32,24 +32,33 @@ namespace Store
             {
                 try
                 {
-                    State.User = API.GetCustomerByName(Name.Text);
-                    if (State.User != null)
+                    if (Password.Password == Password2.Password)
                     {
-                         MessageBox.Show("Username already taken.", "Account creation Failed!", MessageBoxButton.OK, MessageBoxImage.Information);
-                         Name.Text = "...";
-                         Password.Text = "...";
-                         Email.Text = "...";
-                         Age.Text = "...";
+                        State.User = API.GetCustomerByName(Name.Text);
+                        if (State.User != null)
+                        {
+                            MessageBox.Show("Username already taken.", "Account creation Failed!", MessageBoxButton.OK, MessageBoxImage.Information);
+                            Name.Text = "...";
+                            Password.Password = "...";
+                            Email.Text = "...";
+                            Age.Text = "...";
+                        }
+                        else
+                        {
+                            ctx.Customers.Add(new Customer { Name = Name.Text, Password = Password.Password, Email = Email.Text, Age = Convert.ToInt32(Age.Text) });
+                            ctx.SaveChanges();
+
+                            MessageBox.Show("Account successful creation.", "Account creation Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
+                            var next_window = new LoginWindow();
+                            next_window.Show();
+                            this.Close();
+                        }
                     }
                     else
                     {
-                        ctx.Customers.Add(new Customer { Name = Name.Text, Password = Password.Text, Email = Email.Text, Age = Convert.ToInt32(Age.Text) });
-                        ctx.SaveChanges();
-
-                         MessageBox.Show("Account successful creation.", "Account creation Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
-                         var next_window = new LoginWindow();
-                         next_window.Show();
-                         this.Close();
+                        Password.Background = Brushes.Red;
+                        Password2.Background = Brushes.Red;
+                        MessageBox.Show("Password doesn't match.", "Password error.", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
                 catch (System.FormatException)
@@ -74,6 +83,10 @@ namespace Store
         private void PasswordTextBoxClick(object sender, MouseButtonEventArgs e)
         {
             Password.Clear();
+        }
+        private void Password2TextBoxClick(object sender, MouseButtonEventArgs e)
+        {
+            Password2.Clear();
         }
         private void EmailTextBoxClick(object sender, MouseButtonEventArgs e)
         {

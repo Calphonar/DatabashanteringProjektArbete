@@ -7,12 +7,14 @@
         mc:Ignorable="d"
         Title="CreateAccountWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="300, 100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="300, 50,0,0" VerticalAlignment="Top"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="300, 150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="300, 100,0,0" VerticalAlignment="Top"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="300, 200,0,0" VerticalAlignment="Top"/>
         <Label Content="Age" HorizontalAlignment="Left" Margin="300, 250,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="Name" PreviewMouseLeftButtonDown="NameTextBoxClick" HorizontalAlignment="Left" Margin="270,129,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="Password" PreviewMouseLeftButtonDown="PasswordTextBoxClick" HorizontalAlignment="Left" Margin="270,179,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Name" PreviewMouseLeftButtonDown="NameTextBoxClick" HorizontalAlignment="Left" Margin="270,79,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox Password="***" Name="Password" PasswordChar="*" PreviewMouseLeftButtonDown="PasswordTextBoxClick" HorizontalAlignment="Left" Margin="270,129,0,0" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox Password="***" Name="Password2" PasswordChar="*" PreviewMouseLeftButtonDown="Password2TextBoxClick" HorizontalAlignment="Left" Margin="270,179,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="Email" PreviewMouseLeftButtonDown="EmailTextBoxClick" HorizontalAlignment="Left" Margin="270,229,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="Age" PreviewMouseLeftButtonDown="AgeTextBoxClick" HorizontalAlignment="Left" Margin="270,279,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Click ="CreateNewAccountClick"  Content="Create Account" HorizontalAlignment="Left" Margin="265,322,0,0" VerticalAlignment="Top" Height="42" Width="131"/>
