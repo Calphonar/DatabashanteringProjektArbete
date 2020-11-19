@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,33 +33,43 @@ namespace Store
             {
                 try
                 {
-                    if (Password.Password == Password2.Password)
+                    if (IsValidEmail(Email.Text) == true)
                     {
-                        State.User = API.GetCustomerByName(Name.Text);
-                        if (State.User != null)
+
+                        if (Password.Password == Password2.Password)
                         {
-                            MessageBox.Show("Username already taken.", "Account creation Failed!", MessageBoxButton.OK, MessageBoxImage.Information);
-                            Name.Text = "...";
-                            Password.Password = "...";
-                            Email.Text = "...";
-                            Age.Text = "...";
+
+                            State.User = API.GetCustomerByName(Name.Text);
+                            if (State.User != null)
+                            {
+                                MessageBox.Show("Username already taken.", "Account creation Failed!", MessageBoxButton.OK, MessageBoxImage.Information);
+                                Name.Text = "...";
+                                Password.Password = "...";
+                                Email.Text = "...";
+                                Age.Text = "...";
+                            }
+                            else
+                            {
+                                ctx.Customers.Add(new Customer { Name = Name.Text, Password = Password.Password, Email = Email.Text, Age = Convert.ToInt32(Age.Text) });
+                                ctx.SaveChanges();
+
+                                MessageBox.Show("Account successful creation.", "Account creation Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
+                                var next_window = new LoginWindow();
+                                next_window.Show();
+                                this.Close();
+                            }
                         }
                         else
                         {
-                            ctx.Customers.Add(new Customer { Name = Name.Text, Password = Password.Password, Email = Email.Text, Age = Convert.ToInt32(Age.Text) });
-                            ctx.SaveChanges();
-
-                            MessageBox.Show("Account successful creation.", "Account creation Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
-                            var next_window = new LoginWindow();
-                            next_window.Show();
-                            this.Close();
+                            Password.Background = Brushes.Red;
+                            Password2.Background = Brushes.Red;
+                            MessageBox.Show("Password doesn't match.", "Password error.", MessageBoxButton.OK, MessageBoxImage.Information);
                         }
                     }
                     else
                     {
-                        Password.Background = Brushes.Red;
-                        Password2.Background = Brushes.Red;
-                        MessageBox.Show("Password doesn't match.", "Password error.", MessageBoxButton.OK, MessageBoxImage.Information);
+                        Email.Background = Brushes.Red;
+                        MessageBox.Show("Incorrect email form", "Email error.", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
                 catch (System.FormatException)
@@ -70,7 +81,19 @@ namespace Store
 
             }
         }
-        
+
+        // See if user add an "@" to the email box. Doesn't work 100%.
+        public bool IsValidEmail(string emailText)
+        {
+            try
+            {
+                MailAddress test = new MailAddress(emailText);
+                return true;
+            }
+            catch (Exception) { return false; }
+        }
+
+
         // Makes the three dots in the boxes disappear
         private void AgeTextBoxClick(object sender, MouseButtonEventArgs e)
         {
