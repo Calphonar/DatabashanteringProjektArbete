@@ -2,29 +2,22 @@
 
 namespace DatabaseConnection.Migrations
 {
-    public partial class MoreProperties : Migration
+    public partial class ModelUpdate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<bool>(
-                name: "ChildSafe",
-                table: "Movies",
-                type: "bit",
-                nullable: false,
-                defaultValue: false);
-
             migrationBuilder.AddColumn<string>(
                 name: "Genre",
                 table: "Movies",
                 type: "nvarchar(max)",
                 nullable: true);
 
-            migrationBuilder.AddColumn<int>(
-                name: "Year",
+            migrationBuilder.AddColumn<float>(
+                name: "Rating",
                 table: "Movies",
-                type: "int",
+                type: "real",
                 nullable: false,
-                defaultValue: 0);
+                defaultValue: 0f);
 
             migrationBuilder.AddColumn<int>(
                 name: "Age",
@@ -49,15 +42,11 @@ namespace DatabaseConnection.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "ChildSafe",
-                table: "Movies");
-
-            migrationBuilder.DropColumn(
                 name: "Genre",
                 table: "Movies");
 
             migrationBuilder.DropColumn(
-                name: "Year",
+                name: "Rating",
                 table: "Movies");
 
             migrationBuilder.DropColumn(

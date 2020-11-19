@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatabaseConnection.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20201118093353_MoreProperties")]
-    partial class MoreProperties
+    [Migration("20201119075846_ModelUpdate")]
+    partial class ModelUpdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -52,20 +52,17 @@ namespace DatabaseConnection.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<bool>("ChildSafe")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Genre")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageURL")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<float>("Rating")
+                        .HasColumnType("real");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Year")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

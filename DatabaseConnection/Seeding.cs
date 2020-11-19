@@ -36,7 +36,7 @@ namespace DatabaseConnection
                     try{ var test = new Uri(url); }
                     catch (Exception) { continue; }
 
-                    movies.Add(new Movie { Title = cells[2], ImageURL = url });
+                    movies.Add(new Movie { Title = cells[2], ImageURL = url, Genre = cells[4]});
                 }
                 ctx.AddRange(movies);
 
