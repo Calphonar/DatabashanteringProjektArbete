@@ -59,6 +59,14 @@ namespace Store
                             rating.HorizontalAlignment = HorizontalAlignment.Center;
                             rating.VerticalAlignment = VerticalAlignment.Bottom;
                             rating.Foreground = Brushes.White;
+                            rating.Margin = new Thickness(-5);
+
+                            var genre = new Label() { };
+                            genre.Content = movie.Genre;
+                            genre.HorizontalAlignment = HorizontalAlignment.Center;
+                            genre.VerticalAlignment = VerticalAlignment.Bottom;
+                            genre.Foreground = Brushes.White;
+                            genre.Margin = new Thickness(15);
 
 
                             MovieGrid.Children.Add(text); // säger till att texten ska tillhöra den gridden
@@ -70,6 +78,9 @@ namespace Store
                             MovieGrid.Children.Add(rating);
                             Grid.SetRow(rating, y);
                             Grid.SetColumn(rating, x);
+                            MovieGrid.Children.Add(genre);
+                            Grid.SetRow(genre, y);
+                            Grid.SetColumn(genre, x);
                         }
                         catch (Exception e) when 
                             (e is ArgumentNullException || 
