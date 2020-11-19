@@ -38,8 +38,12 @@ namespace Store
                         {
                             var text = new Label() { }; // variabel för texten
                             text.Content = movie.Title; // Vad texten ska innehålla, i detta fall Movie.Title i databasen
-                            text.HorizontalAlignment = HorizontalAlignment.Left; // vart texten ska ligga horisontelt
+                            text.HorizontalAlignment = HorizontalAlignment.Center; // vart texten ska ligga horisontelt
                             text.VerticalAlignment = VerticalAlignment.Top; // vart texten ska ligga vertikalt
+                            text.FontSize = 16;
+                            text.FontWeight = FontWeights.UltraBold;
+                            text.FontFamily = new FontFamily("Comic Sans MS");
+                            text.Foreground = Brushes.White;
 
                             var image = new Image() { };
                             image.Cursor = Cursors.Hand; // om man håller över en bild blir det ett sånt pekfinger
@@ -47,7 +51,7 @@ namespace Store
                             image.HorizontalAlignment = HorizontalAlignment.Center;
                             image.VerticalAlignment = VerticalAlignment.Center;
                             image.Source = new BitmapImage(new Uri(movie.ImageURL)); // hämtar url från ImageURL i databasen till bilderna
-                            //image.Height = 120;
+                            image.Height = 120;
                             image.Margin = new Thickness(4, 4, 4, 4);
 
                             MovieGrid.Children.Add(text); // säger till att texten ska tillhöra den gridden
