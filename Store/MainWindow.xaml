@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <ScrollViewer>
+        Title="MainWindow" Height="450" Width="800" Background="#FF1F1C1C">
+    <ScrollViewer Margin="0,40,0,0">
         <Grid Name="MovieGrid" Background="Black" ShowGridLines="False">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="157*" />
