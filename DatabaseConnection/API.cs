@@ -8,7 +8,7 @@ namespace DatabaseConnection
 {
     public class API
     {
-        public static List<Movie> GetMovieSlice(int a, int b)
+        public static List<Movie> GetMovieSliceName(int a, int b)
         {
             using var ctx = new Context();
             return ctx.Movies.OrderBy(m => m.Title).Skip(a).Take(b).ToList();
@@ -17,6 +17,11 @@ namespace DatabaseConnection
         {
             using var ctx = new Context();
             return ctx.Movies.OrderByDescending(m => m.Rating).Skip(a).Take(b).ToList();
+        }
+        public static List<Movie> GetMovieSliceByRatingLowest(int a, int b)
+        {
+            using var ctx = new Context();
+            return ctx.Movies.OrderBy(m => m.Rating).Skip(a).Take(b).ToList();
         }
         public static Customer GetCustomerByName(string name)
         {

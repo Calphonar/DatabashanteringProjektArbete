@@ -10,4 +10,10 @@
     <ProjectReference Include="..\DatabaseConnection\DatabaseConnection.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="MainWindowByRating.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+
 </Project>
