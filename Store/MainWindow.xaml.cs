@@ -25,7 +25,7 @@ namespace Store
         {
             InitializeComponent();
 
-            State.Movies = API.GetMovieSlice(0, 30);;
+            State.Movies = API.GetMovieSlice(0, 30); ;
             for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
             {
                 for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)
@@ -82,9 +82,9 @@ namespace Store
                             Grid.SetRow(genre, y);
                             Grid.SetColumn(genre, x);
                         }
-                        catch (Exception e) when 
-                            (e is ArgumentNullException || 
-                             e is System.IO.FileNotFoundException || 
+                        catch (Exception e) when
+                            (e is ArgumentNullException ||
+                             e is System.IO.FileNotFoundException ||
                              e is UriFormatException)
                         {
                             continue;
@@ -102,7 +102,7 @@ namespace Store
             int i = y * MovieGrid.ColumnDefinitions.Count + x;
             State.Pick = State.Movies[i];
 
-            if(API.RegisterSale(State.User, State.Pick))
+            if (API.RegisterSale(State.User, State.Pick))
                 MessageBox.Show("All is well and you can download your movie now.", "Sale Succeeded!", MessageBoxButton.OK, MessageBoxImage.Information);
             else
                 MessageBox.Show("An error happened while buying the movie, please try again at a later time.", "Sale Failed!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
@@ -191,6 +191,40 @@ namespace Store
                         }
                     }
                 }
+            }
+        }
+        private bool handle = true;
+        private void ComboBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (handle) Handle();
+            handle = true;
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cmb = sender as ComboBox;
+            handle = !cmb.IsDropDownOpen;
+            Handle();
+        }
+
+        private void Handle()
+        {
+            switch (cmbSelect.SelectedItem.ToString().Split(new string[] { ": " }, StringSplitOptions.None).Last())
+            {
+                case "Sort by name a-z":
+                    //Handle for the first combobox
+                    break;
+                case "Sort by name z-a":
+                    //Handle for the second combobox
+                    break;
+                case "Sort by highest rating":
+                    //Handle for the third combobox
+                    break;
+                case "Sort by lowest rating":
+                    //Handle for the third combobox
+                    break;
+                default:
+                    break;
             }
         }
     }
