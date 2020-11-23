@@ -136,77 +136,9 @@ namespace Store
                     }
                     break;
                 case "Sort by lowest rating":
-                    MovieGrid.Children.Clear();
-
-                    InitializeComponent();
-
-                    State.Movies = API.GetMovieSliceByRatingLowest(0, 30); ;
-                    for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
-                    {
-                        for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)
-                        {
-                            int i = y * MovieGrid.ColumnDefinitions.Count + x;
-                            if (i < State.Movies.Count)
-                            {
-                                var movie = State.Movies[i];
-                                try
-                                {
-                                    var text = new Label() { }; // variabel för texten
-                                    text.Content = movie.Title; // Vad texten ska innehålla, i detta fall Movie.Title i databasen
-                                    text.HorizontalAlignment = HorizontalAlignment.Center; // vart texten ska ligga horisontelt
-                                    text.VerticalAlignment = VerticalAlignment.Top; // vart texten ska ligga vertikalt
-                                    text.FontSize = 16;
-                                    text.FontWeight = FontWeights.UltraBold;
-                                    text.FontFamily = new FontFamily("Sans-Serif");
-                                    text.Foreground = Brushes.White;
-
-                                    var image = new Image() { };
-                                    image.Cursor = Cursors.Hand; // om man håller över en bild blir det ett sånt pekfinger
-                                    image.MouseUp += Image_MouseUp; // Om man klickar på en bilden skickas man ner till Image_MouseUp Metoden.
-                                    image.HorizontalAlignment = HorizontalAlignment.Center;
-                                    image.VerticalAlignment = VerticalAlignment.Center;
-                                    image.Source = new BitmapImage(new Uri(movie.ImageURL)); // hämtar url från ImageURL i databasen till bilderna
-                                    image.Height = 120;
-                                    image.Margin = new Thickness(4, 4, 4, 4);
-
-                                    var rating = new Label() { };
-                                    rating.Content = movie.Rating + "/10 ★";
-                                    rating.HorizontalAlignment = HorizontalAlignment.Center;
-                                    rating.VerticalAlignment = VerticalAlignment.Bottom;
-                                    rating.Foreground = Brushes.White;
-                                    rating.Margin = new Thickness(-5);
-
-                                    var genre = new Label() { };
-                                    genre.Content = movie.Genre;
-                                    genre.HorizontalAlignment = HorizontalAlignment.Center;
-                                    genre.VerticalAlignment = VerticalAlignment.Bottom;
-                                    genre.Foreground = Brushes.White;
-                                    genre.Margin = new Thickness(15);
-
-
-                                    MovieGrid.Children.Add(text); // säger till att texten ska tillhöra den gridden
-                                    Grid.SetRow(text, y); // vilken grid i y
-                                    Grid.SetColumn(text, x); // vilken grid i x
-                                    MovieGrid.Children.Add(image);
-                                    Grid.SetRow(image, y);
-                                    Grid.SetColumn(image, x);
-                                    MovieGrid.Children.Add(rating);
-                                    Grid.SetRow(rating, y);
-                                    Grid.SetColumn(rating, x);
-                                    MovieGrid.Children.Add(genre);
-                                    Grid.SetRow(genre, y);
-                                    Grid.SetColumn(genre, x);
-                                }
-                                catch (Exception exeption) when
-                                    (exeption is ArgumentNullException ||
-                                     exeption is System.IO.FileNotFoundException ||
-                                     exeption is UriFormatException)
-                                {
-                                    continue;
-                                }
-                            }
-                        }
-                    }
+                    var next_window_lowestRating = new MainWindowByLowestRating();
+                    next_window_lowestRating.Show();
+                    this.Close();
                     break;
                 default:
                     break;

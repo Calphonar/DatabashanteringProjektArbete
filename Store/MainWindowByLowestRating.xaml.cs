@@ -19,9 +19,9 @@ namespace Store
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindowByLowestRating : Window
     {
-        public MainWindow()
+        public MainWindowByLowestRating()
         {
             InitializeComponent();
         }
@@ -59,7 +59,22 @@ namespace Store
             switch (cmbSelect.SelectedItem.ToString().Split(new string[] { ": " }, StringSplitOptions.None).Last())
             {
                 case "Sort by name a-z":
-                    State.Movies = API.GetMovieSliceName(0, 30);
+                    var next_window_main = new MainWindow();
+                    next_window_main.Show();
+                    this.Close();
+                    break;
+                case "Sort by name z-a":
+                    //Handle for the second combobox
+                    break;
+                case "Sort by highest rating":
+                    var next_window = new MainWindowByRating();
+                    next_window.Show();
+                    this.Close();
+                    break;
+                case "Sort by lowest rating":
+                    InitializeComponent();
+
+                    State.Movies = API.GetMovieSliceByRatingLowest(0, 30); ;
                     for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
                     {
                         for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)
@@ -126,19 +141,6 @@ namespace Store
                             }
                         }
                     }
-                    break;
-                case "Sort by name z-a":
-                    //Handle for the second combobox
-                    break;
-                case "Sort by highest rating":
-                    var next_window = new MainWindowByRating();
-                    next_window.Show();
-                    this.Close();
-                    break;
-                case "Sort by lowest rating":
-                    var next_window_lowestRating = new MainWindowByLowestRating();
-                    next_window_lowestRating.Show();
-                    this.Close();
                     break;
                 default:
                     break;
