@@ -15,8 +15,8 @@
         </Grid.Background>
         <Label Content="Username" HorizontalAlignment="Center" Margin="0,108,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
         <Label Content="Password" HorizontalAlignment="Center" Margin="0,168,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
-        <TextBox PreviewMouseLeftButtonDown="UsernameTextBoxClick" Name="NameField" HorizontalAlignment="Center" Margin="0,146,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox Password="***" PreviewMouseLeftButtonDown="PasswordTextBoxClick" Name="PasswordField" HorizontalAlignment="Center" Margin="0,206,0,0" PasswordChar="*" VerticalAlignment="Top" Width="120"/>
+        <TextBox PreviewMouseLeftButtonDown="UsernameTextBoxClick" Name="NameField" HorizontalAlignment="Center" Margin="0,146,0,0" Text="admin" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox Password="admin" PreviewMouseLeftButtonDown="PasswordTextBoxClick" Name="PasswordField" HorizontalAlignment="Center" Margin="0,206,0,0" PasswordChar="*" VerticalAlignment="Top" Width="120"/>
         <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Center" Height="30" Margin="0,240,0,0" VerticalAlignment="Top" Width="94"/>
         <Button Click="CreateAccountClick" Content="Create account" HorizontalAlignment="Center" Height="30" Margin="0,281,0,0" VerticalAlignment="Top" Width="94"/>
     </Grid>

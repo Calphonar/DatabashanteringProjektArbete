@@ -24,7 +24,15 @@ namespace Store
         public MainWindow()
         {
             InitializeComponent();
+            var text_box = new TextBox { };
+            text_box.Text = "Search movie here...";
+            text_box.Margin = new Thickness (1,-32,132,206);
+            MovieGrid.Children.Add(text_box);
+            Grid.SetColumn(text_box, 2);
+            Grid.SetColumnSpan(text_box, 2);
         }
+
+
 
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
