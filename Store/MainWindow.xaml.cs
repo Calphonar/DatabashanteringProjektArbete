@@ -24,16 +24,17 @@ namespace Store
         public MainWindow()
         {
             InitializeComponent();
-            var text_box = new TextBox { };
-            text_box.Text = "Search movie here...";
-            text_box.Margin = new Thickness (1,-32,132,206);
-            MovieGrid.Children.Add(text_box);
-            Grid.SetColumn(text_box, 2);
-            Grid.SetColumnSpan(text_box, 2);
+
+            this.KeyDown += new KeyEventHandler(MainWindow_KeyDown);
         }
 
-
-
+        public void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                State.Movies.Add(API.GetMovieByName(textbox.Text));
+            }
+        }
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
             var x = Grid.GetColumn(sender as UIElement);

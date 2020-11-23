@@ -28,6 +28,12 @@ namespace DatabaseConnection
             using var ctx = new Context();
             return ctx.Movies.OrderBy(m => m.Rating).Skip(a).Take(b).ToList();
         }
+        public static Movie GetMovieByName(string title)
+        {
+            using var ctx = new Context();
+            return ctx.Movies.FirstOrDefault(m => m.Title.ToLower().Contains(title.ToLower()));
+        }
+
         public static Customer GetCustomerByName(string name)
         {
             using var ctx = new Context();
