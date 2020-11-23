@@ -11,6 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="SearchWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
     <Page Update="MainWindowZA.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>

@@ -32,7 +32,11 @@ namespace Store
         {
             if (e.Key == Key.Enter)
             {
-                State.Movies.Add(API.GetMovieByName(textbox.Text));
+                    State.Movies.Clear();
+                    State.Movies.AddRange(API.GetMovieByName(textbox.Text));
+                    var next_searchWindow = new SearchWindow();
+                    next_searchWindow.Show();
+                    this.Close();
             }
         }
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
