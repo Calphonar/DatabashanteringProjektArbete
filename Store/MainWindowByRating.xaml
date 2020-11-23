@@ -1,4 +1,4 @@
-﻿<Window x:Class="Store.MainWindow"
+﻿<Window x:Class="Store.MainWindowByRating"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -28,7 +28,7 @@
                 <RowDefinition Height="200" />
                 <RowDefinition Height="200" />
             </Grid.RowDefinitions>
-            <ComboBox Name="cmbSelect" SelectedIndex="0" Margin="1,-31,132,205" SelectionChanged="ComboBox_SelectionChanged" DropDownClosed="ComboBox_DropDownClosed" Grid.ColumnSpan="2">
+            <ComboBox Name="cmbSelect" SelectedIndex="2" Margin="1,-31,132,205" SelectionChanged="ComboBox_SelectionChanged" DropDownClosed="ComboBox_DropDownClosed" Grid.ColumnSpan="2">
                 <ComboBoxItem>Sort by name a-z</ComboBoxItem>
                 <ComboBoxItem>Sort by name z-a</ComboBoxItem>
                 <ComboBoxItem>Sort by highest rating</ComboBoxItem>
