@@ -13,6 +13,11 @@ namespace DatabaseConnection
             using var ctx = new Context();
             return ctx.Movies.OrderBy(m => m.Title).Skip(a).Take(b).ToList();
         }
+        public static List<Movie> GetMovieSliceNameZA(int a, int b)
+        {
+            using var ctx = new Context();
+            return ctx.Movies.OrderByDescending(m => m.Title).Skip(a).Take(b).ToList();
+        }
         public static List<Movie> GetMovieSliceByRating(int a, int b)
         {
             using var ctx = new Context();

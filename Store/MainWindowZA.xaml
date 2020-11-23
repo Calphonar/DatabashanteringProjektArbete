@@ -1,0 +1,39 @@
+﻿<Window x:Class="Store.MainWindowZA"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Store"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#FF1F1C1C">
+    <ScrollViewer Margin="0,2,0,0">
+        <Grid Name="MovieGrid" Background="Black" ShowGridLines="False" Margin="0,30,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="157*" />
+                <ColumnDefinition Width="157*"/>
+                <ColumnDefinition Width="157*" />
+                <ColumnDefinition Width="157*" />
+                <ColumnDefinition Width="157*" />
+                <ColumnDefinition Width="157*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="200" />
+            </Grid.RowDefinitions>
+            <ComboBox Name="cmbSelect" SelectedIndex="1" Margin="1,-31,132,205" SelectionChanged="ComboBox_SelectionChanged" DropDownClosed="ComboBox_DropDownClosed" Grid.ColumnSpan="2">
+                <ComboBoxItem>Sort by name a-z</ComboBoxItem>
+                <ComboBoxItem>Sort by name z-a</ComboBoxItem>
+                <ComboBoxItem>Sort by highest rating</ComboBoxItem>
+                <ComboBoxItem>Sort by lowest rating</ComboBoxItem>
+            </ComboBox>
+        </Grid>
+    </ScrollViewer>
+</Window>

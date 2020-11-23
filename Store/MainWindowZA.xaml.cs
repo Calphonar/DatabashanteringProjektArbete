@@ -19,9 +19,9 @@ namespace Store
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindowZA : Window
     {
-        public MainWindow()
+        public MainWindowZA()
         {
             InitializeComponent();
         }
@@ -59,7 +59,12 @@ namespace Store
             switch (cmbSelect.SelectedItem.ToString().Split(new string[] { ": " }, StringSplitOptions.None).Last())
             {
                 case "Sort by name a-z":
-                    State.Movies = API.GetMovieSliceName(0, 30);
+                    var next_window_main = new MainWindow();
+                    next_window_main.Show();
+                    this.Close();
+                    break;
+                case "Sort by name z-a":
+                    State.Movies = API.GetMovieSliceNameZA(0, 30);
                     for (int y = 0; y < MovieGrid.RowDefinitions.Count; y++)
                     {
                         for (int x = 0; x < MovieGrid.ColumnDefinitions.Count; x++)
@@ -126,11 +131,6 @@ namespace Store
                             }
                         }
                     }
-                    break;
-                case "Sort by name z-a":
-                    var next_windowZA = new MainWindowZA();
-                    next_windowZA.Show();
-                    this.Close();
                     break;
                 case "Sort by highest rating":
                     var next_window = new MainWindowByRating();

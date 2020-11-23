@@ -64,7 +64,9 @@ namespace Store
                     this.Close();
                     break;
                 case "Sort by name z-a":
-                    //Handle for the second combobox
+                    var next_windowZA = new MainWindowZA();
+                    next_windowZA.Show();
+                    this.Close();
                     break;
                 case "Sort by highest rating":
                     State.Movies = API.GetMovieSliceByRating(0, 30); ;

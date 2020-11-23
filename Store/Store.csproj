@@ -11,6 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="MainWindowZA.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
     <Page Update="MainWindowByLowestRating.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
