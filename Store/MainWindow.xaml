@@ -35,6 +35,7 @@
                 <ComboBoxItem>Sort by lowest rating</ComboBoxItem>
             </ComboBox>
             <TextBox Name="textbox" Margin="1,-32,132,206" Text="Search movie here..." Grid.Column="2" Grid.ColumnSpan="2"/>
+            <Button Click="MyAccountClick" Content="My Account" Grid.Column="5" HorizontalAlignment="Left" Height="26" Margin="44,-29,0,0" VerticalAlignment="Top" Width="84"/>
         </Grid>
     </ScrollViewer>
 </Window>
