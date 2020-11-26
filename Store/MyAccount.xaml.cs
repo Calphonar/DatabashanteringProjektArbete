@@ -23,6 +23,24 @@ namespace Store
 
             AccountLabel.Content = "Welcome, " + State.User.Name + "!";
 
+            /*State.Rental = 12;
+             * userId = State.User.Id
+            RentalList.Content = State.Rental.Movie.Title;*/
+
+        }
+
+        private void Logoutbutton(object sender, RoutedEventArgs e)
+        {
+            var logout = new LoginWindow();
+            logout.Show();
+            this.Close();
+        }
+
+        private void Backbutton(object sender, RoutedEventArgs e)
+        {
+            var mainwindow = new MainWindow();
+            mainwindow.Show();
+            this.Close();
         }
     }
 }
