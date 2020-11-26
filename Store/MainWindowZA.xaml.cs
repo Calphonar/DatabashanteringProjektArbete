@@ -163,5 +163,12 @@ namespace Store
         {
             textbox.Clear();
         }
+
+        private void MyAccountClick(object sender, RoutedEventArgs e)
+        {
+            var next_window_myaccount = new MyAccount();
+            next_window_myaccount.Show();
+            this.Close();
+        }
     }
 }
