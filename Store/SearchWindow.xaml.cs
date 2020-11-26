@@ -164,5 +164,10 @@ namespace Store
                     break;
             }
         }
+
+        private void SearchTextBoxClick(object sender, MouseButtonEventArgs e)
+        {
+            textbox.Clear();
+        }
     }
 }

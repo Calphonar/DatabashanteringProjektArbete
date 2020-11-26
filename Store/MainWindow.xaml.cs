@@ -166,5 +166,11 @@ namespace Store
             next_window_myaccount.Show();
             this.Close();
         }
+
+        private void SearchTextBoxClick(object sender, MouseButtonEventArgs e)
+        {
+            textbox.Clear();
+        }
     }
+
 }
