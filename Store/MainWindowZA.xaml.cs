@@ -24,8 +24,20 @@ namespace Store
         public MainWindowZA()
         {
             InitializeComponent();
+            this.KeyDown += new KeyEventHandler(MainWindow_KeyDown);
         }
 
+        public void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                State.Movies.Clear();
+                State.Movies.AddRange(API.GetMovieByName(textbox.Text));
+                var next_searchWindow = new SearchWindow();
+                next_searchWindow.Show();
+                this.Close();
+            }
+        }
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
             var x = Grid.GetColumn(sender as UIElement);
@@ -145,6 +157,11 @@ namespace Store
                 default:
                     break;
             }
+        }
+
+        private void SearchTextBoxClick(object sender, MouseButtonEventArgs e)
+        {
+            textbox.Clear();
         }
     }
 }
