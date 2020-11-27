@@ -42,5 +42,12 @@ namespace Store
             mainwindow.Show();
             this.Close();
         }
+
+        private void ChangePasswordClick(object sender, RoutedEventArgs e)
+        {
+            var changePasswordWindow = new ChangePasswordWindow();
+            changePasswordWindow.Show();
+            this.Close();
+        }
     }
 }

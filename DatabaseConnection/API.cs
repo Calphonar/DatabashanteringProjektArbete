@@ -44,6 +44,7 @@ namespace DatabaseConnection
             using var ctx = new Context();
             return ctx.Customers.FirstOrDefault(c => c.Name.ToLower() == password.ToLower());
         }
+
         public static bool RegisterSale(Customer customer, Movie movie)
         {
             using var ctx = new Context();
