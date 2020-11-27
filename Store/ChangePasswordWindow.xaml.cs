@@ -64,5 +64,12 @@ namespace Store
                 MessageBox.Show("Wrong Existing Password", "Password Error", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void GoBackButton(object sender, RoutedEventArgs e)
+        {
+            var BackMyAccount = new MyAccount();
+            BackMyAccount.Show();
+            this.Close();
+        }
     }
 }
