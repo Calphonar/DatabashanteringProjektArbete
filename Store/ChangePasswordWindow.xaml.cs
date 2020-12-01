@@ -47,8 +47,8 @@ namespace Store
                 if(NewPasswordBox1.Password == NewPasswordBox2.Password)
                 {
                         State.User.Password = NewPasswordBox1.Password;
-                        State.ct.Customers.Update(State.User);
-                        State.ct.SaveChanges();
+                        API.ctx.Customers.Update(State.User);
+                        API.ctx.SaveChanges();
                     MessageBox.Show("Successfully changed password", "Password Changed", MessageBoxButton.OK, MessageBoxImage.Information);
                     var BackMyAccount = new MyAccount();
                     BackMyAccount.Show();

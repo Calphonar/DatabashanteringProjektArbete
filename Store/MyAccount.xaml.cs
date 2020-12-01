@@ -9,6 +9,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Linq;
+using DatabaseConnection;
 
 namespace Store
 {
@@ -22,11 +24,21 @@ namespace Store
             InitializeComponent();
 
             AccountLabel.Content = "Welcome, " + State.User.Name + "!";
+            int y = 0;
 
-            /*State.Rental = 12;
-             * userId = State.User.Id
-            RentalList.Content = State.Rental.Movie.Title;*/
-
+            for (int i = 0; i < State.User.Sales.Count; i++)
+            {
+                Rental rental = State.User.Sales[i];
+                
+                var rental1 = new Label() { };
+                rental1.Content = rental.Movie.Title;
+                rental1.HorizontalAlignment = HorizontalAlignment.Left;
+                rental1.VerticalAlignment = VerticalAlignment.Top;
+                rental1.Foreground = Brushes.White;
+                rental1.Margin = new Thickness(0,y,0,0);
+                RentalList.Children.Add(rental1);
+                y += 25;
+            }
         }
 
         private void Logoutbutton(object sender, RoutedEventArgs e)

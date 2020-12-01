@@ -6,12 +6,14 @@
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
         Title="MyAccount" Height="450" Width="800" Background="Black">
-    <Grid>
+    <Grid Name="AccountGrid">
         <Label Name="AccountLabel" Content="" HorizontalAlignment="Center" Height="93" Margin="0,23,0,0" VerticalAlignment="Top" Width="384" Foreground="White" FontSize="36"/>
         <Button Content="Log out" HorizontalAlignment="Right" Margin="0,0,32,18" VerticalAlignment="Bottom" Height="49" Width="151" Click="Logoutbutton"/>
         <Button Content="Back" HorizontalAlignment="Right" Margin="0,0,237,18" VerticalAlignment="Bottom" Height="49" Width="151" Click="Backbutton"/>
         <Button Content="Change Password" HorizontalAlignment="Left" Margin="16,0,0,18" VerticalAlignment="Bottom" Height="49" Width="151" Click="ChangePasswordClick"/>
-        <Label Name ="RentalList" Content="Temp" HorizontalAlignment="Left" Margin="47,168,0,0" VerticalAlignment="Top" Height="179" Width="158" Foreground="White"/>
-        <Label Content="Rentals:" HorizontalAlignment="Left" Margin="59,126,0,0" VerticalAlignment="Top" Width="117" Foreground="White" FontSize="20"/>
+        <ScrollViewer HorizontalAlignment="Left" Margin="31,136,0,0" VerticalAlignment="Top" Height="179" Width="202" Foreground="White">
+            <Grid Name="RentalList"/>
+        </ScrollViewer>
+        <Label Content="Rentals:" HorizontalAlignment="Left" Margin="70,80,0,0" VerticalAlignment="Top" Width="117" Foreground="White" FontSize="20"/>
     </Grid>
 </Window>
