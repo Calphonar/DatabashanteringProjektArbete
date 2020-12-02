@@ -41,13 +41,13 @@
                 <RowDefinition Height="200" />
                 <RowDefinition Height="200" />
             </Grid.RowDefinitions>
-            <ComboBox Name="cmbSelect" SelectedIndex="0" Margin="1,-31,132,205" SelectionChanged="ComboBox_SelectionChanged" DropDownClosed="ComboBox_DropDownClosed" Grid.ColumnSpan="2">
+            <ComboBox Name="cmbSelect" SelectedIndex="0" Margin="1,-31,132,205" SelectionChanged="ComboBox_SelectionChanged" DropDownClosed="ComboBox_DropDownClosed" Grid.ColumnSpan="2" Background="#FF1B1F49">
                 <ComboBoxItem>Sort by name a-z</ComboBoxItem>
                 <ComboBoxItem>Sort by name z-a</ComboBoxItem>
                 <ComboBoxItem>Sort by highest rating</ComboBoxItem>
                 <ComboBoxItem>Sort by lowest rating</ComboBoxItem>
             </ComboBox>
-            <TextBox Name="textbox" PreviewMouseLeftButtonDown="SearchTextBoxClick" Margin="1,-32,132,206" Text="Search movie here..." Grid.Column="2" Grid.ColumnSpan="2"/>
+            <TextBox Name="textbox" PreviewMouseLeftButtonDown="SearchTextBoxClick" Margin="1,-32,132,206" Text="Search movie here..." Grid.Column="2" Grid.ColumnSpan="2" />
             <Button Click="MyAccountClick" Content="My Account" Grid.Column="5" HorizontalAlignment="Left" Height="26" Margin="44,-29,0,0" VerticalAlignment="Top" Width="84"/>
         </Grid>
     </ScrollViewer>

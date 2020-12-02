@@ -5,21 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
-        Title="CreateAccountWindow" Height="450" Width="800">
+        Title="CreateAccountWindow" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/IMG/Background.Png"/>
         </Grid.Background>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="300, 50,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="300, 150,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="300, 100,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="300, 200,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
-        <Label Content="Age" HorizontalAlignment="Left" Margin="300, 250,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
-        <TextBox Name="Name" PreviewMouseLeftButtonDown="NameTextBoxClick" HorizontalAlignment="Left" Margin="270,79,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox Password="***" Name="Password" PasswordChar="*" PreviewMouseLeftButtonDown="PasswordTextBoxClick" HorizontalAlignment="Left" Margin="270,129,0,0" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox Password="***" Name="Password2" PasswordChar="*" PreviewMouseLeftButtonDown="Password2TextBoxClick" HorizontalAlignment="Left" Margin="270,179,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="Email" PreviewMouseLeftButtonDown="EmailTextBoxClick" HorizontalAlignment="Left" Margin="270,229,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="Age" PreviewMouseLeftButtonDown="AgeTextBoxClick" HorizontalAlignment="Left" Margin="270,279,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Click ="CreateNewAccountClick"  Content="Create Account" HorizontalAlignment="Left" Margin="265,322,0,0" VerticalAlignment="Top" Height="42" Width="131"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="489,49,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="489,149,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="489,99,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="489,199,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <Label Content="Age" HorizontalAlignment="Left" Margin="489,249,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <TextBox Name="Name" PreviewMouseLeftButtonDown="NameTextBoxClick" HorizontalAlignment="Left" Margin="459,78,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
+        <PasswordBox Password="***" Name="Password" PasswordChar="*" PreviewMouseLeftButtonDown="PasswordTextBoxClick" HorizontalAlignment="Left" Margin="459,128,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
+        <PasswordBox Password="***" Name="Password2" PasswordChar="*" PreviewMouseLeftButtonDown="Password2TextBoxClick" HorizontalAlignment="Left" Margin="459,178,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
+        <TextBox Name="Email" PreviewMouseLeftButtonDown="EmailTextBoxClick" HorizontalAlignment="Left" Margin="459,228,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
+        <TextBox Name="Age" PreviewMouseLeftButtonDown="AgeTextBoxClick" HorizontalAlignment="Left" Margin="459,278,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
+        <Button Click ="CreateNewAccountClick"  Content="Create Account" HorizontalAlignment="Left" Margin="454,321,0,0" VerticalAlignment="Top" Height="42" Width="131"/>
+        <Image Margin="60,37,507,347" Stretch="Fill" Source="/IMG/Logo.png"/>
     </Grid>
 </Window>
