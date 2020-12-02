@@ -7,7 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#FF1F1C1C">
     <ScrollViewer Margin="0,2,0,0">
-        <Grid Name="MovieGrid" Background="Black" ShowGridLines="False" Margin="0,30,0,0">
+        <Grid Name="MovieGrid" ShowGridLines="False" Margin="0,30,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="/IMG/Background.Png" Stretch="Fill">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="1"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Grid.Background>
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="157*" />
                 <ColumnDefinition Width="157*"/>

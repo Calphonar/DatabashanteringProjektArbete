@@ -7,7 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="IMG\Background.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DatabaseConnection\DatabaseConnection.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="IMG\Background.png" />
   </ItemGroup>
 
   <ItemGroup>

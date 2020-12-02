@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
         Title="CreateAccountWindow" Height="450" Width="800">
-    <Grid Background="Black">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/IMG/Background.Png"/>
+        </Grid.Background>
         <Label Content="Name" HorizontalAlignment="Left" Margin="300, 50,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="300, 150,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="300, 100,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>

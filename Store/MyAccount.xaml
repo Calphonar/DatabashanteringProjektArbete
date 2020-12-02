@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store"
         mc:Ignorable="d"
-        Title="MyAccount" Height="450" Width="800" Background="Black">
+        Title="MyAccount" Height="450" Width="800">
+    
     <Grid Name="AccountGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="/IMG/Background.Png" Stretch="Fill">
+                <ImageBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="1"/>
+                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                        <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ImageBrush.RelativeTransform>
+            </ImageBrush>
+        </Grid.Background>
         <Label Name="AccountLabel" Content="" HorizontalAlignment="Center" Height="93" Margin="0,23,0,0" VerticalAlignment="Top" Width="384" Foreground="White" FontSize="36"/>
         <Button Content="Log out" HorizontalAlignment="Right" Margin="0,0,32,18" VerticalAlignment="Bottom" Height="49" Width="151" Click="Logoutbutton"/>
         <Button Content="Back" HorizontalAlignment="Right" Margin="0,0,237,18" VerticalAlignment="Bottom" Height="49" Width="151" Click="Backbutton"/>
