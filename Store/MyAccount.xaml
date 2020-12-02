@@ -27,7 +27,7 @@
         <ScrollViewer HorizontalAlignment="Left" Margin="31,136,0,0" VerticalAlignment="Top" Height="179" Width="202" Foreground="White">
             <Grid Name="RentalList"/>
         </ScrollViewer>
-        <Label Content="Rentals:" HorizontalAlignment="Left" Margin="70,80,0,0" VerticalAlignment="Top" Width="117" Foreground="White" FontSize="20"/>
+        <Label Content="Rented movies:" HorizontalAlignment="Left" Margin="46,97,0,0" VerticalAlignment="Top" Width="173" Foreground="White" FontSize="20"/>
         <Image Margin="16,23,568,360" Stretch="Fill" Source="/IMG/Logo.png"/>
     </Grid>
 </Window>
