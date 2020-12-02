@@ -15,8 +15,8 @@
         <Label Content="Password" HorizontalAlignment="Center" Margin="0,195,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
         <TextBox PreviewMouseLeftButtonDown="UsernameTextBoxClick" Name="NameField" HorizontalAlignment="Center" Margin="0,173,0,0" Text="admin" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
         <PasswordBox Password="admin" PreviewMouseLeftButtonDown="PasswordTextBoxClick" Name="PasswordField" HorizontalAlignment="Center" PasswordChar="*" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White" Margin="0,234,0,0"/>
-        <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Center" Height="30" Margin="0,267,0,0" VerticalAlignment="Top" Width="94"/>
-        <Button Click="CreateAccountClick" Content="Create account" HorizontalAlignment="Center" Height="30" Margin="0,308,0,0" VerticalAlignment="Top" Width="94"/>
+        <Button Click="LogIn_Click" Content="Log In" HorizontalAlignment="Center" Height="30" Margin="0,267,0,0" VerticalAlignment="Top" Width="94" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
+        <Button Click="CreateAccountClick" Content="Create account" HorizontalAlignment="Center" Height="30" Margin="0,308,0,0" VerticalAlignment="Top" Width="94" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
         <Image Margin="252,42,252,326" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/IMG/Logo.png"/>
     </Grid>
 </Window>

@@ -20,7 +20,7 @@
         <PasswordBox Password="***" Name="Password2" PasswordChar="*" PreviewMouseLeftButtonDown="Password2TextBoxClick" HorizontalAlignment="Left" Margin="459,178,0,0" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
         <TextBox Name="Email" PreviewMouseLeftButtonDown="EmailTextBoxClick" HorizontalAlignment="Left" Margin="459,228,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
         <TextBox Name="Age" PreviewMouseLeftButtonDown="AgeTextBoxClick" HorizontalAlignment="Left" Margin="459,278,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
-        <Button Click ="CreateNewAccountClick"  Content="Create Account" HorizontalAlignment="Left" Margin="454,321,0,0" VerticalAlignment="Top" Height="42" Width="131"/>
+        <Button Click ="CreateNewAccountClick"  Content="Create Account" HorizontalAlignment="Left" Margin="454,321,0,0" VerticalAlignment="Top" Height="42" Width="131" Background="{x:Null}" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
         <Image Margin="60,37,507,347" Stretch="Fill" Source="/IMG/Logo.png"/>
     </Grid>
 </Window>

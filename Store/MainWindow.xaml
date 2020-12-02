@@ -47,8 +47,8 @@
                 <ComboBoxItem>Sort by highest rating</ComboBoxItem>
                 <ComboBoxItem>Sort by lowest rating</ComboBoxItem>
             </ComboBox>
-            <TextBox Name="textbox" PreviewMouseLeftButtonDown="SearchTextBoxClick" Margin="1,-32,132,206" Text="Search movie here..." Grid.Column="2" Grid.ColumnSpan="2" />
-            <Button Click="MyAccountClick" Content="My Account" Grid.Column="5" HorizontalAlignment="Left" Height="26" Margin="44,-29,0,0" VerticalAlignment="Top" Width="84"/>
+            <TextBox Name="textbox" PreviewMouseLeftButtonDown="SearchTextBoxClick" Margin="1,-32,132,206" Text="Search movie here..." Grid.Column="2" Grid.ColumnSpan="2" Background="#FF191A2C" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
+            <Button Click="MyAccountClick" Content="My Account" Grid.Column="5" HorizontalAlignment="Left" Height="26" Margin="44,-29,0,0" VerticalAlignment="Top" Width="84" Background="#FF191A2C" BorderBrush="#FF2C4B72" BorderThickness="1.5" Foreground="White"/>
         </Grid>
     </ScrollViewer>
 </Window>
